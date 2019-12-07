@@ -1,0 +1,825 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 107593728 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2719), pid=8209, tid=8211
+#
+# JRE version: OpenJDK Runtime Environment (11.0.3+7) (build 11.0.3+7-post-Raspbian-5)
+# Java VM: OpenJDK Server VM (11.0.3+7-post-Raspbian-5, mixed mode, serial gc, linux-)
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xms512M -Xmx1008M spigot-1.14.4.jar nogui
+
+Host: rev 4 (v7l), 4 cores, 926M, Raspbian GNU/Linux 10 (buster)
+Time: Sat Dec  7 13:02:38 2019 AEDT elapsed time: 1788 seconds (0d 0h 29m 48s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x75f63c00):  VMThread "VM Thread" [stack: 0x343ea000,0x3446a000] [id=8211]
+
+Stack: [0x343ea000,0x3446a000],  sp=0x34468540,  free space=505k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x98958c]
+V  [libjvm.so+0x98a244]
+V  [libjvm.so+0x353988]
+V  [libjvm.so+0x7b4e84]
+V  [libjvm.so+0x7ab94c]
+V  [libjvm.so+0x980314]
+V  [libjvm.so+0x2321a8]
+V  [libjvm.so+0x2323d0]
+V  [libjvm.so+0x91a4b4]
+V  [libjvm.so+0x232a3c]
+V  [libjvm.so+0x470d50]
+V  [libjvm.so+0x4713c4]
+V  [libjvm.so+0x98b760]
+V  [libjvm.so+0x9960ac]
+V  [libjvm.so+0x9945c0]
+V  [libjvm.so+0x994d24]
+V  [libjvm.so+0x995024]
+V  [libjvm.so+0x924080]
+V  [libjvm.so+0x7ba388]
+C  [libpthread.so.0+0x6494]  start_thread+0xcc
+
+VM_Operation (0x2e3ae6d0): GenCollectForAllocation, mode: safepoint, requested by thread 0x34242c00
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x34257eb0, length=25, elements={
+0x75f6a000, 0x75f6c800, 0x75f75400, 0x75f76c00,
+0x75f79400, 0x75feec00, 0x75ff4c00, 0x3178a400,
+0x3178b800, 0x3178cc00, 0x3106dc00, 0x30afb000,
+0x3080e800, 0x3080f400, 0x75f0a400, 0x34029000,
+0x3402a400, 0x3408a400, 0x340c6c00, 0x340c9c00,
+0x2fb25000, 0x2fb26000, 0x3423e800, 0x3423f800,
+0x34242c00
+}
+
+Java Threads: ( => current thread )
+  0x75f6a000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8212, stack(0x73c13000,0x73c63000)]
+  0x75f6c800 JavaThread "Finalizer" daemon [_thread_blocked, id=8213, stack(0x34398000,0x343e8000)]
+  0x75f75400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8214, stack(0x34348000,0x34398000)]
+  0x75f76c00 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=8215, stack(0x33b06000,0x33b86000)]
+  0x75f79400 JavaThread "Sweeper thread" daemon [_thread_blocked, id=8216, stack(0x339b0000,0x33a00000)]
+  0x75feec00 JavaThread "Service Thread" daemon [_thread_blocked, id=8217, stack(0x33960000,0x339b0000)]
+  0x75ff4c00 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=8219, stack(0x33910000,0x33960000)]
+  0x3178a400 JavaThread "Server-Worker-1" daemon [_thread_blocked, id=8239, stack(0x33603000,0x33653000)]
+  0x3178b800 JavaThread "Server-Worker-2" daemon [_thread_blocked, id=8240, stack(0x319b0000,0x31a00000)]
+  0x3178cc00 JavaThread "Server-Worker-3" daemon [_thread_blocked, id=8241, stack(0x31960000,0x319b0000)]
+  0x3106dc00 JavaThread "Snooper Timer" daemon [_thread_blocked, id=8253, stack(0x33200000,0x33280000)]
+  0x30afb000 JavaThread "NonBlockingInputStreamThread" daemon [_thread_blocked, id=8264, stack(0x3180d000,0x3185d000)]
+  0x3080e800 JavaThread "Server Infinisleeper" daemon [_thread_blocked, id=8265, stack(0x307b0000,0x30800000)]
+  0x3080f400 JavaThread "Server thread" [_thread_blocked, id=8266, stack(0x30760000,0x307b0000)]
+  0x75f0a400 JavaThread "DestroyJavaVM" [_thread_blocked, id=8210, stack(0x76012000,0x76062000)]
+  0x34029000 JavaThread "Thread-3" daemon [_thread_blocked, id=8267, stack(0x30710000,0x30760000)]
+  0x3402a400 JavaThread "Server console handler" daemon [_thread_in_native, id=8268, stack(0x306c0000,0x30710000)]
+  0x3408a400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8272, stack(0x30326000,0x30376000)]
+  0x340c6c00 JavaThread "Spigot Watchdog Thread" [_thread_blocked, id=8273, stack(0x30376000,0x303f6000)]
+  0x340c9c00 JavaThread "Spigot Metrics Thread" daemon [_thread_blocked, id=8276, stack(0x301d6000,0x30226000)]
+  0x2fb25000 JavaThread "ObjectCleanerThread" daemon [_thread_blocked, id=8280, stack(0x2fc6d000,0x2fcbd000)]
+  0x2fb26000 JavaThread "Netty Server IO #0" daemon [_thread_blocked, id=8281, stack(0x2fc1d000,0x2fc6d000)]
+  0x3423e800 JavaThread "Netty Server IO #1" daemon [_thread_blocked, id=8425, stack(0x33480000,0x33500000)]
+  0x3423f800 JavaThread "Netty Server IO #2" daemon [_thread_blocked, id=8426, stack(0x2e3b0000,0x2e400000)]
+  0x34242c00 JavaThread "Netty Server IO #3" daemon [_thread_blocked, id=8427, stack(0x2e360000,0x2e3b0000)]
+
+Other Threads:
+=>0x75f63c00 VMThread "VM Thread" [stack: 0x343ea000,0x3446a000] [id=8211]
+  0x75ff0400 WatcherThread [stack: 0x33680000,0x33700000] [id=8218]
+
+Threads with active compile tasks:
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x75f08b08] Threads_lock - owner thread: 0x75f63c00
+[0x75f08fe8] Heap_lock - owner thread: 0x34242c00
+
+Heap:
+ def new generation   total 216832K, used 0K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+  to   space 24064K,   0% used [0x40840000, 0x40840000, 0x41fc0000)
+ tenured generation   total 481856K, used 352155K [0x49c00000, 0x67290000, 0x73c00000)
+   the space 481856K,  73% used [0x49c00000, 0x5f3e6de8, 0x5f3e6e00, 0x67290000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+
+Card table byte_map: [0x34a07000,0x34c00000] _byte_map_base: 0x34861000
+
+Polling page: 0x76f47000
+
+Metaspace:
+
+Usage:
+   56.22 MB capacity,    54.46 MB ( 97%) used,     1.26 MB (  2%) free+waste,   503.87 KB ( <1%) overhead. 
+
+Virtual space:
+     56.30 MB reserved,      56.25 MB (>99%) committed 
+
+Chunk freelists:
+0 bytes
+
+CodeCache: size=32768Kb used=8428Kb max_used=8917Kb free=24339Kb
+ bounds [0x73cfe000, 0x7464e000, 0x75cfe000]
+ total_blobs=51281 nmethods=2896 adapters=304
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (10 events):
+Event: 1724.720 Thread 0x75f76c00 17219             io.netty.buffer.PooledByteBuf::capacity (5 bytes)
+Event: 1724.721 Thread 0x75f76c00 nmethod 17219 0x73d88808 code [0x73d88900, 0x73d8895c]
+Event: 1724.721 Thread 0x75f76c00 17220             net.minecraft.server.v1_14_R1.BlockState::hashCode (26 bytes)
+Event: 1724.729 Thread 0x75f76c00 nmethod 17220 0x73e1af88 code [0x73e1b090, 0x73e1b1bc]
+Event: 1725.324 Thread 0x75f76c00 17221             net.minecraft.server.v1_14_R1.EnumDirection$EnumAxis$3::a (3 bytes)
+Event: 1725.326 Thread 0x75f76c00 nmethod 17221 0x73da9208 code [0x73da9300, 0x73da935c]
+Event: 1725.326 Thread 0x75f76c00 17222             net.minecraft.server.v1_14_R1.EnumDirection$EnumAxis$1::a (2 bytes)
+Event: 1725.327 Thread 0x75f76c00 nmethod 17222 0x73dbe388 code [0x73dbe480, 0x73dbe4cc]
+Event: 1726.178 Thread 0x75f76c00 17223             net.minecraft.server.v1_14_R1.PathfinderGoalSelector$$Lambda$2383/0x2de54828::test (8 bytes)
+Event: 1726.181 Thread 0x75f76c00 nmethod 17223 0x73d8d808 code [0x73d8d900, 0x73d8d9bc]
+
+GC Heap History (10 events):
+Event: 1695.841 GC heap after
+{Heap after GC invocations=347 (full 4):
+ def new generation   total 216832K, used 12182K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,  50% used [0x40840000, 0x41425a78, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 473666K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66a908a8, 0x66a90a00, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1704.894 GC heap before
+{Heap before GC invocations=347 (full 4):
+ def new generation   total 216832K, used 204950K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K, 100% used [0x34c00000, 0x40840000, 0x40840000)
+  from space 24064K,  50% used [0x40840000, 0x41425a78, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 473666K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66a908a8, 0x66a90a00, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1704.966 GC heap after
+{Heap after GC invocations=348 (full 4):
+ def new generation   total 216832K, used 11957K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,  49% used [0x41fc0000, 0x42b6d630, 0x43740000)
+  to   space 24064K,   0% used [0x40840000, 0x40840000, 0x41fc0000)
+ tenured generation   total 481600K, used 474652K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66b87008, 0x66b87200, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1709.871 GC heap before
+{Heap before GC invocations=348 (full 4):
+ def new generation   total 216832K, used 204725K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K, 100% used [0x34c00000, 0x40840000, 0x40840000)
+  from space 24064K,  49% used [0x41fc0000, 0x42b6d630, 0x43740000)
+  to   space 24064K,   0% used [0x40840000, 0x40840000, 0x41fc0000)
+ tenured generation   total 481600K, used 474652K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66b87008, 0x66b87200, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1709.951 GC heap after
+{Heap after GC invocations=349 (full 4):
+ def new generation   total 216832K, used 13930K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,  57% used [0x40840000, 0x415daa00, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 474741K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66b9d4b0, 0x66b9d600, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1714.664 GC heap before
+{Heap before GC invocations=349 (full 4):
+ def new generation   total 216832K, used 206698K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K, 100% used [0x34c00000, 0x40840000, 0x40840000)
+  from space 24064K,  57% used [0x40840000, 0x415daa00, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 474741K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  98% used [0x49c00000, 0x66b9d4b0, 0x66b9d600, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1714.751 GC heap after
+{Heap after GC invocations=350 (full 4):
+ def new generation   total 216832K, used 13707K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,  56% used [0x41fc0000, 0x42d22e58, 0x43740000)
+  to   space 24064K,   0% used [0x40840000, 0x40840000, 0x41fc0000)
+ tenured generation   total 481600K, used 477023K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  99% used [0x49c00000, 0x66dd7d60, 0x66dd7e00, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1719.958 GC heap before
+{Heap before GC invocations=350 (full 4):
+ def new generation   total 216832K, used 206475K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K, 100% used [0x34c00000, 0x40840000, 0x40840000)
+  from space 24064K,  56% used [0x41fc0000, 0x42d22e58, 0x43740000)
+  to   space 24064K,   0% used [0x40840000, 0x40840000, 0x41fc0000)
+ tenured generation   total 481600K, used 477023K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  99% used [0x49c00000, 0x66dd7d60, 0x66dd7e00, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1720.040 GC heap after
+{Heap after GC invocations=351 (full 4):
+ def new generation   total 216832K, used 13400K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K,   0% used [0x34c00000, 0x34c00000, 0x40840000)
+  from space 24064K,  55% used [0x40840000, 0x415561e8, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 479000K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  99% used [0x49c00000, 0x66fc6380, 0x66fc6400, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+Event: 1726.206 GC heap before
+{Heap before GC invocations=351 (full 4):
+ def new generation   total 216832K, used 206168K [0x34c00000, 0x43740000, 0x49c00000)
+  eden space 192768K, 100% used [0x34c00000, 0x40840000, 0x40840000)
+  from space 24064K,  55% used [0x40840000, 0x415561e8, 0x41fc0000)
+  to   space 24064K,   0% used [0x41fc0000, 0x41fc0000, 0x43740000)
+ tenured generation   total 481600K, used 479000K [0x49c00000, 0x67250000, 0x73c00000)
+   the space 481600K,  99% used [0x49c00000, 0x66fc6380, 0x66fc6400, 0x67250000)
+ Metaspace       used 55771K, capacity 57568K, committed 57600K, reserved 57648K
+}
+
+Deoptimization events (10 events):
+Event: 1725.864 Thread 0x3178b800 Uncommon trap: reason=tenured action=make_not_entrant pc=0x7411ff0c method=net.minecraft.server.v1_14_R1.ChunkTaskQueueSorter.a(Ljava/util/function/IntSupplier;Lnet/minecraft/server/v1_14_R1/ChunkCoordIntPair;ILjava/util/function/IntConsumer;)V @ 0 c2
+Event: 1725.887 Thread 0x3178b800 Uncommon trap: reason=tenured action=make_not_entrant pc=0x73def670 method=net.minecraft.server.v1_14_R1.PairedQueue$b.run()V @ 0 c2
+Event: 1725.925 Thread 0x3080f400 Uncommon trap: reason=unstable_if action=none pc=0x742abe94 method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.a(Lnet/minecraft/server/v1_14_R1/IBlockAccess;Lnet/minecraft/server/v1_14_R1/FluidType;Lnet/minecraft/server/v1_14_R1/BlockPosition;Lnet/mine
+Event: 1725.926 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.967 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.968 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.968 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.969 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.969 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+Event: 1725.970 Thread 0x3080f400 Uncommon trap: reason=bimorphic action=none pc=0x742ac13c method=net.minecraft.server.v1_14_R1.FluidTypeFlowing.h(Lnet/minecraft/server/v1_14_R1/Fluid;)Z @ 7 c2
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 1279.291 Thread 0x3178b800 Exception <a 'java/lang/NoSuchMethodError'{0x3cfbe378}: java.lang.invoke.Invokers$Holder.linkToTargetMethod(Ljava/lang/Object;Ljava/lang/Object;JLjava/lang/Object;)Ljava/lang/Object;> (0x3cfbe378) thrown at [/build/openjdk-11-pInBoi/openjdk-11-11.0.3+7/sr
+Event: 1312.814 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x3a1d0738}: java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(Ljava/lang/Object;Ljava/lang/Object;)D> (0x3a1d0738) thrown at [/build/openjdk-11-pInBoi/openjdk-11-11.0.3+7/src/hotspot/share/interpreter/lin
+Event: 1313.892 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x3c153be8}: java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x3c153be8)
+Event: 1313.895 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x3c157308}: java.lang.invoke.Invokers$Holder.linkToTargetMethod(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x3c157308) thrown at [/build/open
+Event: 1313.924 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x3c1a7ae8}: java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)Ljava/lang/Object;> (0x3c1a7ae8) thrown at [/build
+Event: 1313.926 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x3c1aac40}: java.lang.invoke.Invokers$Holder.linkToTargetMethod(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x3c1aac40) thrown at [/build/openjdk-11-pInBoi/open
+Event: 1319.223 Thread 0x3080f400 Exception <a 'java/lang/NoSuchMethodError'{0x38184488}: java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)I> (0x38184488) thrown at [/build/openjdk-11-pInBoi
+Event: 1324.025 Thread 0x3080f400 Implicit null exception at 0x73e7b814 to 0x73e7ba00
+Event: 1570.662 Thread 0x3178a400 Implicit null exception at 0x73e678f8 to 0x73e67a54
+Event: 1601.340 Thread 0x3080f400 Implicit null exception at 0x73ed60e4 to 0x73ed6308
+
+Events (10 events):
+Event: 1725.969 Thread 0x3080f400 DEOPT PACKING pc=0x742ac13c sp=0x307ae6c8
+Event: 1725.969 Thread 0x3080f400 DEOPT UNPACKING pc=0x73d13004 sp=0x307ae684 mode 2
+Event: 1725.970 Thread 0x3080f400 Uncommon trap: trap_request=0xffffffc7 fr.pc=0x742ac13c relative=0x0000175c
+Event: 1725.970 Thread 0x3080f400 DEOPT PACKING pc=0x742ac13c sp=0x307ae6c8
+Event: 1725.970 Thread 0x3080f400 DEOPT UNPACKING pc=0x73d13004 sp=0x307ae684 mode 2
+Event: 1726.182 Thread 0x75f79400 flushing nmethod 0x73d97c08
+Event: 1726.182 Thread 0x75f79400 flushing nmethod 0x73dcbb08
+Event: 1726.185 Thread 0x75f79400 flushing nmethod 0x73e9aa08
+Event: 1726.185 Thread 0x75f79400 flushing nmethod 0x73ead508
+Event: 1726.206 Executing VM operation: GenCollectForAllocation
+
+
+Dynamic libraries:
+00010000-00011000 r-xp 00000000 b3:02 13152      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+00020000-00021000 r--p 00000000 b3:02 13152      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+00021000-00022000 rw-p 00001000 b3:02 13152      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+0067d000-007b0000 rw-p 00000000 00:00 0          [heap]
+28600000-286f9000 rw-p 00000000 00:00 0 
+286f9000-28700000 ---p 00000000 00:00 0 
+28800000-288f6000 rw-p 00000000 00:00 0 
+288f6000-28900000 ---p 00000000 00:00 0 
+28c00000-28dff000 rw-p 00000000 00:00 0 
+28dff000-28e00000 ---p 00000000 00:00 0 
+28e00000-28e29000 rw-p 00000000 00:00 0 
+28e29000-28f00000 ---p 00000000 00:00 0 
+28f00000-28f88000 rw-p 00000000 00:00 0 
+28f88000-29000000 ---p 00000000 00:00 0 
+29000000-29100000 rw-p 00000000 00:00 0 
+29100000-29200000 rw-p 00000000 00:00 0 
+29300000-29400000 rw-p 00000000 00:00 0 
+29483000-29583000 rw-p 00000000 00:00 0 
+29583000-29683000 rw-p 00000000 00:00 0 
+29683000-29783000 rw-p 00000000 00:00 0 
+29783000-29883000 rw-p 00000000 00:00 0 
+2990c000-2990f000 ---p 00000000 00:00 0 
+2990f000-29a5c000 rw-p 00000000 00:00 0 
+29a5c000-29b5c000 rw-p 00000000 00:00 0 
+29b5c000-29c5c000 rw-p 00000000 00:00 0 
+29c5c000-29c5f000 ---p 00000000 00:00 0 
+29c5f000-29dac000 rw-p 00000000 00:00 0 
+29dac000-29daf000 ---p 00000000 00:00 0 
+29daf000-2df00000 rw-p 00000000 00:00 0 
+2df00000-2e000000 rw-p 00000000 00:00 0 
+2e000000-2e100000 rw-p 00000000 00:00 0 
+2e100000-2e1fd000 rw-p 00000000 00:00 0 
+2e1fd000-2e200000 ---p 00000000 00:00 0 
+2e233000-2e333000 rw-p 00000000 00:00 0 
+2e360000-2e363000 ---p 00000000 00:00 0 
+2e363000-2e3b0000 rw-p 00000000 00:00 0 
+2e3b0000-2e3b3000 ---p 00000000 00:00 0 
+2e3b3000-2e400000 rw-p 00000000 00:00 0 
+2e400000-2e4fb000 rw-p 00000000 00:00 0 
+2e4fb000-2e500000 ---p 00000000 00:00 0 
+2e500000-2e600000 rw-p 00000000 00:00 0 
+2e600000-2e6fa000 rw-p 00000000 00:00 0 
+2e6fa000-2e700000 ---p 00000000 00:00 0 
+2e700000-2e800000 rw-p 00000000 00:00 0 
+2e800000-2e8f9000 rw-p 00000000 00:00 0 
+2e8f9000-2e900000 ---p 00000000 00:00 0 
+2e900000-2ea00000 rw-p 00000000 00:00 0 
+2ea00000-2eafd000 rw-p 00000000 00:00 0 
+2eafd000-2eb00000 ---p 00000000 00:00 0 
+2eb00000-2ebfc000 rw-p 00000000 00:00 0 
+2ebfc000-2ec00000 ---p 00000000 00:00 0 
+2ec00000-2ed00000 rw-p 00000000 00:00 0 
+2ed00000-2edfa000 rw-p 00000000 00:00 0 
+2edfa000-2ee00000 ---p 00000000 00:00 0 
+2ee00000-2eef9000 rw-p 00000000 00:00 0 
+2eef9000-2ef00000 ---p 00000000 00:00 0 
+2ef00000-2effa000 rw-p 00000000 00:00 0 
+2effa000-2f000000 ---p 00000000 00:00 0 
+2f000000-2f0fe000 rw-p 00000000 00:00 0 
+2f0fe000-2f100000 ---p 00000000 00:00 0 
+2f100000-2f200000 rw-p 00000000 00:00 0 
+2f200000-2f300000 rw-p 00000000 00:00 0 
+2f300000-2f3fe000 rw-p 00000000 00:00 0 
+2f3fe000-2f400000 ---p 00000000 00:00 0 
+2f400000-2f4c8000 rw-p 00000000 00:00 0 
+2f4c8000-2f500000 ---p 00000000 00:00 0 
+2f500000-2f5eb000 rw-p 00000000 00:00 0 
+2f5eb000-2f600000 ---p 00000000 00:00 0 
+2f600000-2f700000 rw-p 00000000 00:00 0 
+2f700000-2f7e0000 rw-p 00000000 00:00 0 
+2f7e0000-2f800000 ---p 00000000 00:00 0 
+2f83c000-2fb00000 rw-p 00000000 00:00 0 
+2fb00000-2fbf1000 rw-p 00000000 00:00 0 
+2fbf1000-2fc00000 ---p 00000000 00:00 0 
+2fc1d000-2fc20000 ---p 00000000 00:00 0 
+2fc20000-2fc6d000 rw-p 00000000 00:00 0 
+2fc6d000-2fc70000 ---p 00000000 00:00 0 
+2fc70000-2fdbd000 rw-p 00000000 00:00 0 
+2fdbd000-2febd000 rw-p 00000000 00:00 0 
+2febd000-2fec1000 r-xp 00000000 b3:02 261735     /lib/arm-linux-gnueabihf/libnss_dns-2.28.so
+2fec1000-2fed0000 ---p 00004000 b3:02 261735     /lib/arm-linux-gnueabihf/libnss_dns-2.28.so
+2fed0000-2fed1000 r--p 00003000 b3:02 261735     /lib/arm-linux-gnueabihf/libnss_dns-2.28.so
+2fed1000-2fed2000 rw-p 00004000 b3:02 261735     /lib/arm-linux-gnueabihf/libnss_dns-2.28.so
+2fed2000-2fee3000 r-xp 00000000 b3:02 261764     /lib/arm-linux-gnueabihf/libresolv-2.28.so
+2fee3000-2fef2000 ---p 00011000 b3:02 261764     /lib/arm-linux-gnueabihf/libresolv-2.28.so
+2fef2000-2fef3000 r--p 00010000 b3:02 261764     /lib/arm-linux-gnueabihf/libresolv-2.28.so
+2fef3000-2fef4000 rw-p 00011000 b3:02 261764     /lib/arm-linux-gnueabihf/libresolv-2.28.so
+2fef4000-2fef6000 rw-p 00000000 00:00 0 
+2fef6000-2fef8000 r-xp 00000000 b3:02 261740     /lib/arm-linux-gnueabihf/libnss_mdns4_minimal.so.2
+2fef8000-2ff07000 ---p 00002000 b3:02 261740     /lib/arm-linux-gnueabihf/libnss_mdns4_minimal.so.2
+2ff07000-2ff08000 r--p 00001000 b3:02 261740     /lib/arm-linux-gnueabihf/libnss_mdns4_minimal.so.2
+2ff08000-2ff09000 rw-p 00002000 b3:02 261740     /lib/arm-linux-gnueabihf/libnss_mdns4_minimal.so.2
+2ff21000-30021000 rw-p 00000000 00:00 0 
+30021000-30024000 ---p 00000000 00:00 0 
+30024000-300a1000 rw-p 00000000 00:00 0 
+300a1000-300c4000 r-xp 00000000 b3:02 13345      /usr/lib/jvm/java-11-openjdk-armhf/lib/libsunec.so
+300c4000-300d3000 ---p 00023000 b3:02 13345      /usr/lib/jvm/java-11-openjdk-armhf/lib/libsunec.so
+300d3000-300d5000 r--p 00022000 b3:02 13345      /usr/lib/jvm/java-11-openjdk-armhf/lib/libsunec.so
+300d5000-300d6000 rw-p 00024000 b3:02 13345      /usr/lib/jvm/java-11-openjdk-armhf/lib/libsunec.so
+300d6000-301d6000 rw-p 00000000 00:00 0 
+301d6000-301d9000 ---p 00000000 00:00 0 
+301d9000-30326000 rw-p 00000000 00:00 0 
+30326000-30329000 ---p 00000000 00:00 0 
+30329000-30376000 rw-p 00000000 00:00 0 
+30376000-30379000 ---p 00000000 00:00 0 
+30379000-303f6000 rw-p 00000000 00:00 0 
+303f6000-303fd000 r-xp 00000000 b3:02 13316      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt_headless.so
+303fd000-3040c000 ---p 00007000 b3:02 13316      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt_headless.so
+3040c000-3040d000 r--p 00006000 b3:02 13316      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt_headless.so
+3040d000-3040e000 rw-p 00007000 b3:02 13316      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt_headless.so
+3040e000-30485000 r-xp 00000000 b3:02 13315      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt.so
+30485000-30494000 ---p 00077000 b3:02 13315      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt.so
+30494000-30495000 r--p 00076000 b3:02 13315      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt.so
+30495000-3049c000 rw-p 00077000 b3:02 13315      /usr/lib/jvm/java-11-openjdk-armhf/lib/libawt.so
+3049c000-305c0000 rw-p 00000000 00:00 0 
+305c0000-306c0000 rw-p 00000000 00:00 0 
+306c0000-306c3000 ---p 00000000 00:00 0 
+306c3000-30710000 rw-p 00000000 00:00 0 
+30710000-30713000 ---p 00000000 00:00 0 
+30713000-30760000 rw-p 00000000 00:00 0 
+30760000-30763000 ---p 00000000 00:00 0 
+30763000-307b0000 rw-p 00000000 00:00 0 
+307b0000-307b3000 ---p 00000000 00:00 0 
+307b3000-30800000 rw-p 00000000 00:00 0 
+30800000-3089e000 rw-p 00000000 00:00 0 
+3089e000-30900000 ---p 00000000 00:00 0 
+30900000-30a00000 rw-p 00000000 00:00 0 
+30a00000-30b00000 rw-p 00000000 00:00 0 
+30b00000-30c00000 rw-p 00000000 00:00 0 
+30c00000-30d00000 rw-p 00000000 00:00 0 
+30d00000-30e00000 rw-p 00000000 00:00 0 
+30e00000-30f00000 rw-p 00000000 00:00 0 
+30f00000-31000000 rw-p 00000000 00:00 0 
+31000000-310ff000 rw-p 00000000 00:00 0 
+310ff000-31100000 ---p 00000000 00:00 0 
+31100000-31200000 rw-p 00000000 00:00 0 
+31200000-31300000 rw-p 00000000 00:00 0 
+31300000-313cf000 rw-p 00000000 00:00 0 
+313cf000-31400000 ---p 00000000 00:00 0 
+31400000-31500000 rw-p 00000000 00:00 0 
+31500000-315fa000 rw-p 00000000 00:00 0 
+315fa000-31600000 ---p 00000000 00:00 0 
+31600000-316fe000 rw-p 00000000 00:00 0 
+316fe000-31700000 ---p 00000000 00:00 0 
+31700000-31800000 rw-p 00000000 00:00 0 
+3180d000-31810000 ---p 00000000 00:00 0 
+31810000-3195d000 rw-p 00000000 00:00 0 
+31960000-31963000 ---p 00000000 00:00 0 
+31963000-319b0000 rw-p 00000000 00:00 0 
+319b0000-319b3000 ---p 00000000 00:00 0 
+319b3000-31b00000 rw-p 00000000 00:00 0 
+31b00000-31c00000 rw-p 00000000 00:00 0 
+31c00000-31d00000 rw-p 00000000 00:00 0 
+31d00000-31e00000 rw-p 00000000 00:00 0 
+31e00000-31f00000 rw-p 00000000 00:00 0 
+31f00000-31fbf000 rw-p 00000000 00:00 0 
+31fbf000-32000000 ---p 00000000 00:00 0 
+32000000-320fb000 rw-p 00000000 00:00 0 
+320fb000-32100000 ---p 00000000 00:00 0 
+32100000-32200000 rw-p 00000000 00:00 0 
+32200000-322f8000 rw-p 00000000 00:00 0 
+322f8000-32300000 ---p 00000000 00:00 0 
+32300000-323fa000 rw-p 00000000 00:00 0 
+323fa000-32400000 ---p 00000000 00:00 0 
+32400000-32500000 rw-p 00000000 00:00 0 
+32500000-325ff000 rw-p 00000000 00:00 0 
+325ff000-32600000 ---p 00000000 00:00 0 
+32600000-326f8000 rw-p 00000000 00:00 0 
+326f8000-32700000 ---p 00000000 00:00 0 
+32700000-32800000 rw-p 00000000 00:00 0 
+32800000-32900000 rw-p 00000000 00:00 0 
+32900000-32a00000 rw-p 00000000 00:00 0 
+32a00000-32b00000 rw-p 00000000 00:00 0 
+32b00000-32c00000 rw-p 00000000 00:00 0 
+32c00000-32d00000 rw-p 00000000 00:00 0 
+32d00000-32e00000 rw-p 00000000 00:00 0 
+32e00000-32eff000 rw-p 00000000 00:00 0 
+32eff000-32f00000 ---p 00000000 00:00 0 
+32f00000-33000000 rw-p 00000000 00:00 0 
+33000000-33100000 rw-p 00000000 00:00 0 
+33100000-331fb000 rw-p 00000000 00:00 0 
+331fb000-33200000 ---p 00000000 00:00 0 
+33200000-33203000 ---p 00000000 00:00 0 
+33203000-33380000 rw-p 00000000 00:00 0 
+33380000-33480000 rw-p 00000000 00:00 0 
+33480000-33483000 ---p 00000000 00:00 0 
+33483000-33500000 rw-p 00000000 00:00 0 
+33500000-335f2000 rw-p 00000000 00:00 0 
+335f2000-33600000 ---p 00000000 00:00 0 
+33603000-33606000 ---p 00000000 00:00 0 
+33606000-33653000 rw-p 00000000 00:00 0 
+33653000-33658000 r-xp 00000000 b3:02 13336      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement_ext.so
+33658000-33667000 ---p 00005000 b3:02 13336      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement_ext.so
+33667000-33668000 r--p 00004000 b3:02 13336      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement_ext.so
+33668000-33669000 rw-p 00005000 b3:02 13336      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement_ext.so
+33669000-3366d000 r-xp 00000000 b3:02 13334      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement.so
+3366d000-3367c000 ---p 00004000 b3:02 13334      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement.so
+3367c000-3367d000 r--p 00003000 b3:02 13334      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement.so
+3367d000-3367e000 rw-p 00004000 b3:02 13334      /usr/lib/jvm/java-11-openjdk-armhf/lib/libmanagement.so
+3367e000-3367f000 ---p 00000000 00:00 0 
+3367f000-33700000 rw-p 00000000 00:00 0 
+33700000-337f3000 rw-p 00000000 00:00 0 
+337f3000-33800000 ---p 00000000 00:00 0 
+33800000-338fe000 rw-p 00000000 00:00 0 
+338fe000-33900000 ---p 00000000 00:00 0 
+33910000-33913000 ---p 00000000 00:00 0 
+33913000-33960000 rw-p 00000000 00:00 0 
+33960000-33963000 ---p 00000000 00:00 0 
+33963000-339b0000 rw-p 00000000 00:00 0 
+339b0000-339b3000 ---p 00000000 00:00 0 
+339b3000-33a00000 rw-p 00000000 00:00 0 
+33a00000-33b00000 rw-p 00000000 00:00 0 
+33b06000-33b09000 ---p 00000000 00:00 0 
+33b09000-33b86000 rw-p 00000000 00:00 0 
+33b86000-33e00000 r--p 0006b000 b3:02 270727     /usr/lib/locale/locale-archive
+33e00000-34000000 r--p 00000000 b3:02 270727     /usr/lib/locale/locale-archive
+34000000-340fe000 rw-p 00000000 00:00 0 
+340fe000-34100000 ---p 00000000 00:00 0 
+34100000-341fc000 rw-p 00000000 00:00 0 
+341fc000-34200000 ---p 00000000 00:00 0 
+34200000-342fb000 rw-p 00000000 00:00 0 
+342fb000-34300000 ---p 00000000 00:00 0 
+34305000-34319000 r-xp 00000000 b3:02 13338      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnet.so
+34319000-34328000 ---p 00014000 b3:02 13338      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnet.so
+34328000-34329000 r--p 00013000 b3:02 13338      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnet.so
+34329000-3432a000 rw-p 00014000 b3:02 13338      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnet.so
+3432a000-34336000 r-xp 00000000 b3:02 13339      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnio.so
+34336000-34346000 ---p 0000c000 b3:02 13339      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnio.so
+34346000-34347000 r--p 0000c000 b3:02 13339      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnio.so
+34347000-34348000 rw-p 0000d000 b3:02 13339      /usr/lib/jvm/java-11-openjdk-armhf/lib/libnio.so
+34348000-3434b000 ---p 00000000 00:00 0 
+3434b000-34398000 rw-p 00000000 00:00 0 
+34398000-3439b000 ---p 00000000 00:00 0 
+3439b000-343e8000 rw-p 00000000 00:00 0 
+343e8000-343e9000 ---p 00000000 00:00 0 
+343e9000-348b0000 rw-p 00000000 00:00 0 
+348b0000-348b6000 ---p 00000000 00:00 0 
+348b6000-349a2000 rw-p 00000000 00:00 0 
+349a2000-34a07000 ---p 00000000 00:00 0 
+34a07000-34a7d000 rw-p 00000000 00:00 0 
+34a7d000-34aaf000 ---p 00000000 00:00 0 
+34aaf000-34b9b000 rw-p 00000000 00:00 0 
+34b9b000-34bff000 ---p 00000000 00:00 0 
+34bff000-43740000 rw-p 00000000 00:00 0 
+43740000-49c00000 ---p 00000000 00:00 0 
+49c00000-67290000 rw-p 00000000 00:00 0 
+6d92c000-73c00000 ---p 00000000 00:00 0 
+73c00000-73c01000 r-xp 00000000 b3:02 13319      /usr/lib/jvm/java-11-openjdk-armhf/lib/libextnet.so
+73c01000-73c11000 ---p 00001000 b3:02 13319      /usr/lib/jvm/java-11-openjdk-armhf/lib/libextnet.so
+73c11000-73c12000 r--p 00001000 b3:02 13319      /usr/lib/jvm/java-11-openjdk-armhf/lib/libextnet.so
+73c12000-73c13000 rw-p 00002000 b3:02 13319      /usr/lib/jvm/java-11-openjdk-armhf/lib/libextnet.so
+73c13000-73c16000 ---p 00000000 00:00 0 
+73c16000-73cd1000 rw-p 00000000 00:00 0 
+73cd1000-73cfe000 ---p 00000000 00:00 0 
+73cfe000-7464e000 rwxp 00000000 00:00 0 
+7464e000-75cfe000 ---p 00000000 00:00 0 
+75cfe000-75e69000 r--s 00000000 b3:02 13349      /usr/lib/jvm/java-11-openjdk-armhf/lib/modules
+75e69000-75e6d000 r-xp 00000000 b3:02 13330      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+75e6d000-75e7c000 ---p 00004000 b3:02 13330      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+75e7c000-75e7d000 r--p 00003000 b3:02 13330      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+75e7d000-75e7e000 rw-p 00004000 b3:02 13330      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+75e7e000-75e87000 r-xp 00000000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+75e87000-75e97000 ---p 00009000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+75e97000-75e98000 r--p 00009000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+75e98000-75e99000 rw-p 0000a000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+75e99000-75e9f000 rw-p 00000000 00:00 0 
+75e9f000-75ebd000 r-xp 00000000 b3:02 13326      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+75ebd000-75ecc000 ---p 0001e000 b3:02 13326      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+75ecc000-75ecd000 r--p 0001d000 b3:02 13326      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+75ecd000-75ece000 rw-p 0001e000 b3:02 13326      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+75ece000-75ed8000 r-xp 00000000 b3:02 13347      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+75ed8000-75ee7000 ---p 0000a000 b3:02 13347      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+75ee7000-75ee8000 r--p 00009000 b3:02 13347      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+75ee8000-75ee9000 rw-p 0000a000 b3:02 13347      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+75ee9000-75eef000 r-xp 00000000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+75eef000-75efe000 ---p 00006000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+75efe000-75eff000 r--p 00005000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+75eff000-75f00000 rw-p 00006000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+75f00000-75ffa000 rw-p 00000000 00:00 0 
+75ffa000-76000000 ---p 00000000 00:00 0 
+76012000-76015000 ---p 00000000 00:00 0 
+76015000-76062000 rw-p 00000000 00:00 0 
+76062000-7607e000 r-xp 00000000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7607e000-7608d000 ---p 0001c000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7608d000-7608e000 r--p 0001b000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7608e000-7608f000 rw-p 0001c000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7608f000-76100000 r-xp 00000000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+76100000-7610f000 ---p 00071000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+7610f000-76110000 r--p 00070000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+76110000-76111000 rw-p 00071000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+76111000-7623f000 r-xp 00000000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+7623f000-7624f000 ---p 0012e000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+7624f000-76254000 r--p 0012e000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+76254000-76256000 rw-p 00133000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+76256000-76258000 rw-p 00000000 00:00 0 
+76258000-76c87000 r-xp 00000000 b3:02 13354      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76c87000-76c97000 ---p 00a2f000 b3:02 13354      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76c97000-76cd1000 r--p 00a2f000 b3:02 13354      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76cd1000-76cf1000 rw-p 00a69000 b3:02 13354      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76cf1000-76d1b000 rw-p 00000000 00:00 0 
+76d1b000-76e53000 r-xp 00000000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76e53000-76e63000 ---p 00138000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76e63000-76e65000 r--p 00138000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76e65000-76e66000 rw-p 0013a000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76e66000-76e69000 rw-p 00000000 00:00 0 
+76e69000-76e6b000 r-xp 00000000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76e6b000-76e7a000 ---p 00002000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76e7a000-76e7b000 r--p 00001000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76e7b000-76e7c000 rw-p 00002000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76e7c000-76e89000 r-xp 00000000 b3:02 13351      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76e89000-76e98000 ---p 0000d000 b3:02 13351      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76e98000-76e99000 r--p 0000c000 b3:02 13351      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76e99000-76e9a000 rw-p 0000d000 b3:02 13351      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76e9a000-76eb1000 r-xp 00000000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76eb1000-76ec0000 ---p 00017000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76ec0000-76ec1000 r--p 00016000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76ec1000-76ec2000 rw-p 00017000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76ec2000-76ec4000 rw-p 00000000 00:00 0 
+76ec4000-76ede000 r-xp 00000000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76ede000-76eed000 ---p 0001a000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76eed000-76eee000 r--p 00019000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76eee000-76eef000 rw-p 0001a000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76ef0000-76ef6000 r-xp 00000000 b3:02 13348      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+76ef6000-76f05000 ---p 00006000 b3:02 13348      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+76f05000-76f06000 r--p 00005000 b3:02 13348      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+76f06000-76f07000 rw-p 00006000 b3:02 13348      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+76f07000-76f0b000 r-xp 00000000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76f0b000-76f1a000 ---p 00004000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76f1a000-76f1b000 r--p 00003000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76f1b000-76f1c000 rw-p 00004000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76f1c000-76f3c000 r-xp 00000000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+76f3d000-76f3f000 r--s 00007000 b3:02 162059     /usr/share/java/java-atk-wrapper.jar
+76f3f000-76f47000 rw-s 00000000 b3:02 397234     /tmp/hsperfdata_pi/8209
+76f47000-76f48000 ---p 00000000 00:00 0 
+76f48000-76f4c000 rw-p 00000000 00:00 0 
+76f4c000-76f4d000 r--p 00020000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+76f4d000-76f4e000 rw-p 00021000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+7e9e0000-7ea01000 rw-p 00000000 00:00 0          [stack]
+7ebb2000-7ebb3000 r-xp 00000000 00:00 0          [sigpage]
+7ebb3000-7ebb4000 r--p 00000000 00:00 0          [vvar]
+7ebb4000-7ebb5000 r-xp 00000000 00:00 0          [vdso]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+
+VM Arguments:
+jvm_args: -Xms512M -Xmx1008M 
+java_command: spigot-1.14.4.jar nogui
+java_class_path (initial): spigot-1.14.4.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+   size_t InitialHeapSize                          = 536870912                                 {product} {command line}
+   size_t MaxHeapSize                              = 1056964608                                {product} {command line}
+   size_t MaxNewSize                               = 352321536                                 {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 131072                                    {product} {ergonomic}
+   size_t NewSize                                  = 178913280                                 {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+   size_t OldSize                                  = 357957632                                 {product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+     bool UseAOT                                   = false                                     {product} {ergonomic}
+     bool UseSerialGC                              = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x98b0e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x98b0e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x98b0e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x7b0420], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x7b0420], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x98b0e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0x7b02b8], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x7b08c8], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x7b08c8], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x7b08c8], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x7b08c8], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:PRETTY_NAME="Raspbian GNU/Linux 10 (buster)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+uname:Linux 4.19.75-v7+ #1270 SMP Tue Sep 24 18:45:11 BST 2019 armv7l
+libc:glibc 2.28 NPTL 2.28 
+rlimit: STACK 8192k, CORE 0k, NPROC 7336, NOFILE 1048576, AS infinity, DATA infinity, FSIZE infinity
+load average:3.12 2.67 2.27
+
+/proc/meminfo:
+MemTotal:         948296 kB
+MemFree:           28500 kB
+MemAvailable:      17808 kB
+Buffers:             560 kB
+Cached:            13692 kB
+SwapCached:          788 kB
+Active:           429088 kB
+Inactive:         428092 kB
+Active(anon):     423348 kB
+Inactive(anon):   420256 kB
+Active(file):       5740 kB
+Inactive(file):     7836 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:        102396 kB
+SwapFree:           3976 kB
+Dirty:                32 kB
+Writeback:             0 kB
+AnonPages:        842436 kB
+Mapped:            11292 kB
+Shmem:               452 kB
+Slab:              42848 kB
+SReclaimable:      14192 kB
+SUnreclaim:        28656 kB
+KernelStack:        1360 kB
+PageTables:         3848 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      576544 kB
+Committed_AS:    1218640 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+Percpu:              608 kB
+CmaTotal:           8192 kB
+CmaFree:            6016 kB
+
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+14673
+
+
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+
+
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+32768
+
+
+
+/etc/ld.so.preload:
+/usr/lib/arm-linux-gnueabihf/libarmmem-${PLATFORM}.so
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-3
+cpu_memory_nodes: 0
+active_processor_count: 4
+cpu_quota: -2
+cpu_period: -2
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 871817216
+memory_max_usage_in_bytes: 879923200
+
+
+CPU:total 4 (initial active 4) (ARMv7), vfp, vfp3-32, simd
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2835
+Revision	: a020d3
+Serial		: 0000000018de9141
+Model		: Raspberry Pi 3 Model B Plus Rev 1.3
+
+Memory: 4k page, physical 948296k(28500k free), swap 102396k(3976k free)
+
+vm_info: OpenJDK Server VM (11.0.3+7-post-Raspbian-5) for linux- JRE (11.0.3+7-post-Raspbian-5), built on Jun 16 2019 18:24:19 by "buildd" with gcc 8.2.0
+
+END.
